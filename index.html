@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پیشگام صنعت شمس آروند | Pishgam Sanat Shams Arvand</title>
+  <meta name="description" content="شرکت پیشگام صنعت شمس آروند - متخصص لیفتراک و تجهیزات صنعتی">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow: #F5A623;
+      --yellow-light: #FFD166;
+      --yellow-dark: #D48B0E;
+      --blue: #1A5F9E;
+      --blue-dark: #0B3A66;
+      --blue-deeper: #072A4A;
+      --blue-light: #2E7BC8;
+      --blue-soft: #E8F1FA;
+      --white: #FFFFFF;
+      --text: #FFFFFF;
+      --text-muted: #B8D0E8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Vazirmatn', 'Inter', sans-serif;
+      background: var(--blue-deeper);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body.ltr {
+      font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    }
+
+    body.zh {
+      font-family: 'Noto Sans SC', 'Inter', sans-serif;
+    }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(7, 42, 74, 0.92);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+      border-bottom: 2px solid rgba(245, 166, 35, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(7, 42, 74, 0.98);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .logo-area img {
+      height: 50px;
+      width: auto;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--white);
+      line-height: 1.25;
+    }
+
+    .logo-text span {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--yellow);
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--yellow);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--yellow);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .lang-switcher {
+      display: flex;
+      background: rgba(26, 95, 158, 0.5);
+      border-radius: 50px;
+      padding: 3px;
+      gap: 2px;
+      border: 1px solid rgba(245, 166, 35, 0.3);
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: all 0.25s;
+      font-family: inherit;
+    }
+
+    .lang-btn.active {
+      background: var(--yellow);
+      color: var(--blue-deeper);
+    }
+
+    .lang-btn:hover:not(.active) {
+      color: var(--white);
+    }
+
+    .phone-btn {
+      background: linear-gradient(135deg, var(--yellow), var(--yellow-dark));
+      color: var(--blue-deeper);
+      padding: 0.55rem 1.15rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      white-space: nowrap;
+    }
+
+    .phone-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(245, 166, 35, 0.45);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 120px 1.5rem 80px;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--blue-deeper) 0%, var(--blue-dark) 50%, var(--blue) 100%);
+    }
+
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(245, 166, 35, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(245, 166, 35, 0.08) 0%, transparent 40%);
+      z-index: 0;
+    }
+
+    .hero-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.1rem, 5vw, 3.3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.4rem;
+      color: var(--white);
+    }
+
+    .hero-text h1 span {
+      color: var(--yellow);
+    }
+
+    .hero-text .tagline {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 520px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--yellow), var(--yellow-dark));
+      color: var(--blue-deeper);
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(245, 166, 35, 0.45);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid var(--yellow);
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(245, 166, 35, 0.15);
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-logo-wrap {
+      position: relative;
+      width: 360px;
+      height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-logo-wrap::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 166, 35, 0.25) 0%, transparent 65%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    .hero-logo-wrap img {
+      width: 270px;
+      height: auto;
+      filter: drop-shadow(0 15px 35px rgba(0,0,0,0.35));
+      z-index: 1;
+      position: relative;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.12); opacity: 1; }
+    }
+
+    /* ========== SECTIONS ========== */
+    section {
+      padding: 90px 1.5rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header .badge {
+      display: inline-block;
+      background: rgba(245, 166, 35, 0.18);
+      color: var(--yellow);
+      padding: 0.4rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(245, 166, 35, 0.35);
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.75rem, 4vw, 2.4rem);
+      font-weight: 800;
+      margin-bottom: 0.9rem;
+      color: var(--white);
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto;
+      font-size: 1.08rem;
+    }
+
+    /* ========== ABOUT ========== */
+    .about {
+      background: var(--blue-dark);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .about-content h3 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 1.3rem;
+      color: var(--yellow);
+    }
+
+    .about-content p {
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+      font-size: 1.05rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-top: 2.2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1.4rem 0.8rem;
+      background: rgba(26, 95, 158, 0.35);
+      border-radius: 16px;
+      border: 1px solid rgba(245, 166, 35, 0.25);
+    }
+
+    .stat-item .number {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--yellow);
+      display: block;
+    }
+
+    .stat-item .label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .about-card {
+      background: linear-gradient(145deg, var(--blue), var(--blue-dark));
+      border-radius: 22px;
+      padding: 2.3rem;
+      border: 1px solid rgba(245, 166, 35, 0.3);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+    }
+
+    .about-card h4 {
+      color: var(--yellow);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-card ul {
+      list-style: none;
+    }
+
+    .about-card li {
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .about-card li:last-child {
+      border-bottom: none;
+    }
+
+    .about-card li::before {
+      content: '✓';
+      color: var(--yellow);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    /* ========== PRODUCTS ========== */
+    .products {
+      background: var(--blue-deeper);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .product-card {
+      background: var(--blue-dark);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(245, 166, 35, 0.2);
+      transition: all 0.35s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--yellow);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+    }
+
+    .product-icon {
+      height: 160px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+
+    .product-body {
+      padding: 1.6rem;
+    }
+
+    .product-body h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      color: var(--white);
+    }
+
+    .product-body p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .product-body a {
+      color: var(--yellow);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* ========== FEATURES ========== */
+    .features {
+      background: var(--blue-dark);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .feature-card {
+      background: rgba(7, 42, 74, 0.6);
+      border: 1px solid rgba(245, 166, 35, 0.2);
+      border-radius: 16px;
+      padding: 1.9rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      border-color: var(--yellow);
+      transform: translateY(-5px);
+      background: rgba(26, 95, 158, 0.25);
+    }
+
+    .feature-icon {
+      width: 68px;
+      height: 68px;
+      background: linear-gradient(135deg, rgba(245, 166, 35, 0.25), rgba(26, 95, 158, 0.4));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.3rem;
+      font-size: 1.7rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.12rem;
+      margin-bottom: 0.7rem;
+      color: var(--white);
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+    }
+
+    /* ========== CONTACT ========== */
+    .contact {
+      background: var(--blue-deeper);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--yellow);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .contact-item .icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(245, 166, 35, 0.18);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      border: 1px solid rgba(245, 166, 35, 0.3);
+    }
+
+    .contact-item .text h4 {
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-item .text p,
+    .contact-item .text a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+
+    .contact-item .text a:hover {
+      color: var(--yellow);
+    }
+
+    .phone-big {
+      font-size: 1.55rem !important;
+      font-weight: 700 !important;
+      color: var(--yellow) !important;
+      direction: ltr;
+      display: inline-block;
+    }
+
+    .qr-section {
+      background: linear-gradient(145deg, var(--blue), var(--blue-dark));
+      border-radius: 22px;
+      padding: 2.3rem;
+      text-align: center;
+      border: 2px solid rgba(245, 166, 35, 0.4);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    .qr-section h3 {
+      color: var(--yellow);
+      margin-bottom: 0.8rem;
+      font-size: 1.25rem;
+    }
+
+    .qr-section p {
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+      font-size: 0.95rem;
+    }
+
+    .qr-code {
+      background: var(--white);
+      padding: 14px;
+      border-radius: 14px;
+      display: inline-block;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .qr-code img {
+      width: 190px;
+      height: 190px;
+      display: block;
+    }
+
+    .qr-hint {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--blue-dark);
+      border-top: 2px solid rgba(245, 166, 35, 0.25);
+      padding: 2.5rem 1.5rem 1.8rem;
+    }
+
+    .footer-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .footer-logo img {
+      height: 40px;
+    }
+
+    .footer-logo span {
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--yellow);
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 1.8rem auto 0;
+      padding-top: 1.3rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* ========== MOBILE ========== */
+    @media (max-width: 968px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-text .tagline {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .hero-logo-wrap {
+        width: 280px;
+        height: 280px;
+      }
+      .hero-logo-wrap img {
+        width: 200px;
+      }
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .stats {
+        grid-template-columns: 1fr;
+      }
+      .phone-btn span.phone-text {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .logo-text {
+        display: none;
+      }
+      .lang-btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+      }
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: rgba(7, 42, 74, 0.98);
+      padding: 1.2rem;
+      border-bottom: 2px solid rgba(245,166,35,0.3);
+      z-index: 999;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 0.9rem 1rem;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-weight: 500;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--yellow);
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo-area">
+        <img src="logo.png" alt="Pishgam Sanat Logo">
+        <div class="logo-text">
+          <span id="company-short">پیشگام صنعت</span>
+          شمس آروند
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link" data-key="nav-home">خانه</a></li>
+        <li><a href="#about" class="nav-link" data-key="nav-about">درباره ما</a></li>
+        <li><a href="#products" class="nav-link" data-key="nav-products">محصولات</a></li>
+        <li><a href="#features" class="nav-link" data-key="nav-features">مزایا</a></li>
+        <li><a href="#contact" class="nav-link" data-key="nav-contact">تماس</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" onclick="setLanguage('fa')" id="btn-fa">FA</button>
+          <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+          <button class="lang-btn" onclick="setLanguage('zh')" id="btn-zh">中文</button>
+        </div>
+        <a href="tel:09121207310" class="phone-btn">
+          <span>📞</span>
+          <span class="phone-text">09121207310</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileMenu()">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" data-key="nav-home" onclick="closeMobileMenu()">خانه</a>
+    <a href="#about" data-key="nav-about" onclick="closeMobileMenu()">درباره ما</a>
+    <a href="#products" data-key="nav-products" onclick="closeMobileMenu()">محصولات</a>
+    <a href="#features" data-key="nav-features" onclick="closeMobileMenu()">مزایا</a>
+    <a href="#contact" data-key="nav-contact" onclick="closeMobileMenu()">تماس</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 id="hero-title">پیشگام صنعت <span>شمس آروند</span></h1>
+        <p class="tagline" id="hero-tagline">متخصص تأمین، فروش و خدمات لیفتراک و تجهیزات صنعتی با کیفیت جهانی</p>
+        <div class="hero-buttons">
+          <a href="#products" class="btn-primary" id="hero-btn1">مشاهده محصولات</a>
+          <a href="#contact" class="btn-secondary" id="hero-btn2">تماس با ما</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-logo-wrap">
+          <img src="logo.png" alt="Pishgam Sanat Shams Arvand">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge" id="about-badge">درباره شرکت</span>
+        <h2 id="about-title">ما که هستیم؟</h2>
+        <p id="about-desc">با سال‌ها تجربه در صنعت لیفتراک و تجهیزات جابجایی مواد، همراه مطمئن کسب‌وکار شما هستیم.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-content">
+          <h3 id="about-h3">پیشگام در صنعت لیفتراک</h3>
+          <p id="about-p1">شرکت پیشگام صنعت شمس آروند با تمرکز بر تأمین انواع لیفتراک‌های برقی، دیزلی و گازی، راه‌حل‌های کامل و حرفه‌ای برای انبارها، کارخانه‌ها و مراکز توزیع ارائه می‌دهد.</p>
+          <p id="about-p2">ما با بهره‌گیری از دانش فنی روز و شبکه گسترده تأمین، محصولاتی با استانداردهای بین‌المللی و خدمات پس از فروش قوی در اختیار مشتریان قرار می‌دهیم.</p>
+          <div class="stats">
+            <div class="stat-item">
+              <span class="number">۱۵+</span>
+              <span class="label" id="stat1">سال تجربه</span>
+            </div>
+            <div class="stat-item">
+              <span class="number">۵۰۰+</span>
+              <span class="label" id="stat2">مشتری راضی</span>
+            </div>
+            <div class="stat-item">
+              <span class="number">۲۴/۷</span>
+              <span class="label" id="stat3">پشتیبانی</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-card">
+            <h4 id="about-card-title">خدمات ما</h4>
+            <ul>
+              <li id="service1">فروش لیفتراک نو و کارکرده</li>
+              <li id="service2">خدمات تعمیر و نگهداری</li>
+              <li id="service3">تأمین قطعات یدکی اصلی</li>
+              <li id="service4">مشاوره تخصصی انتخاب لیفتراک</li>
+              <li id="service5">آموزش اپراتور</li>
+              <li id="service6">قراردادهای سرویس دوره‌ای</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge" id="products-badge">محصولات</span>
+        <h2 id="products-title">انواع لیفتراک</h2>
+        <p id="products-desc">طیف گسترده‌ای از لیفتراک‌های صنعتی متناسب با نیاز کسب‌وکار شما</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-icon">⚡</div>
+          <div class="product-body">
+            <h3 id="prod1-title">لیفتراک برقی</h3>
+            <p id="prod1-desc">ایده‌آل برای فضاهای بسته و انبارها. بدون آلودگی صوتی و هوا، با هزینه‌های عملیاتی پایین.</p>
+            <a href="#contact" id="prod1-more">اطلاعات بیشتر ←</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">⛽</div>
+          <div class="product-body">
+            <h3 id="prod2-title">لیفتراک دیزلی</h3>
+            <p id="prod2-desc">قدرت بالا برای کاربردهای سنگین فضای باز. مناسب کارخانه‌ها و محوطه‌های صنعتی.</p>
+            <a href="#contact" id="prod2-more">اطلاعات بیشتر ←</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🔥</div>
+          <div class="product-body">
+            <h3 id="prod3-title">لیفتراک گازی (LPG)</h3>
+            <p id="prod3-desc">انعطاف‌پذیر برای استفاده در فضای بسته و باز. عملکرد قوی با آلودگی کمتر نسبت به دیزل.</p>
+            <a href="#contact" id="prod3-more">اطلاعات بیشتر ←</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">📦</div>
+          <div class="product-body">
+            <h3 id="prod4-title">لیفتراک انباری</h3>
+            <p id="prod4-desc">استاکر، ریچ‌تراک و پالت‌تراک برای مدیریت بهینه فضای انبار و قفسه‌بندی بلند.</p>
+            <a href="#contact" id="prod4-more">اطلاعات بیشتر ←</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge" id="features-badge">چرا ما؟</span>
+        <h2 id="features-title">مزایای همکاری با ما</h2>
+        <p id="features-desc">ما فقط فروشنده نیستیم؛ شریک تجاری بلندمدت شما هستیم.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3 id="feat1-title">کیفیت تضمین‌شده</h3>
+          <p id="feat1-desc">محصولات با استانداردهای بین‌المللی و گارانتی معتبر</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛠️</div>
+          <h3 id="feat2-title">خدمات پس از فروش</h3>
+          <p id="feat2-desc">تیم فنی متخصص و قطعات یدکی در دسترس</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3 id="feat3-title">قیمت رقابتی</h3>
+          <p id="feat3-desc">بهترین نسبت کیفیت به قیمت در بازار</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3 id="feat4-title">تحویل سریع</h3>
+          <p id="feat4-desc">موجودی آماده و فرآیند سفارش آسان</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge" id="contact-badge">تماس با ما</span>
+        <h2 id="contact-title">آماده همکاری هستیم</h2>
+        <p id="contact-desc">برای مشاوره رایگان و دریافت پیش‌فاکتور با ما در ارتباط باشید.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3 id="contact-info-title">راه‌های ارتباطی</h3>
+          
+          <div class="contact-item">
+            <div class="icon">📱</div>
+            <div class="text">
+              <h4 id="contact-phone">تلفن همراه</h4>
+              <a href="tel:09121207310" class="phone-big">0912 120 7310</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">🏢</div>
+            <div class="text">
+              <h4 id="contact-company">شرکت</h4>
+              <p id="contact-company-name">پیشگام صنعت شمس آروند</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">⏰</div>
+            <div class="text">
+              <h4 id="contact-hours">ساعات کاری</h4>
+              <p id="contact-hours-val">شنبه تا پنج‌شنبه: ۹ صبح تا ۶ عصر</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">💬</div>
+            <div class="text">
+              <h4 id="contact-whatsapp">واتساپ</h4>
+              <a href="https://wa.me/989121207310" target="_blank">09121207310</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="qr-section">
+          <h3 id="qr-title">اسکن کنید و وارد سایت شوید</h3>
+          <p id="qr-desc">کد QR زیر را اسکن کنید تا مستقیماً به وب‌سایت ما هدایت شوید.</p>
+          <div class="qr-code">
+            <img id="qrImage" src="qr-code.png" alt="QR Code - Pishgam Sanat" width="200" height="200">
+          </div>
+          <p class="qr-hint" id="qr-hint">پس از راه‌اندازی دامنه، این QR به‌روز می‌شود</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Logo">
+        <span id="footer-name">پیشگام صنعت شمس آروند</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#home" data-key="nav-home">خانه</a></li>
+        <li><a href="#about" data-key="nav-about">درباره ما</a></li>
+        <li><a href="#products" data-key="nav-products">محصولات</a></li>
+        <li><a href="#contact" data-key="nav-contact">تماس</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p id="footer-copy">© ۱۴۰۵ پیشگام صنعت شمس آروند. تمامی حقوق محفوظ است.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ========== TRANSLATIONS ==========
+    const translations = {
+      fa: {
+        "company-short": "پیشگام صنعت",
+        "nav-home": "خانه",
+        "nav-about": "درباره ما",
+        "nav-products": "محصولات",
+        "nav-features": "مزایا",
+        "nav-contact": "تماس",
+        "hero-title": "پیشگام صنعت <span>شمس آروند</span>",
+        "hero-tagline": "متخصص تأمین، فروش و خدمات لیفتراک و تجهیزات صنعتی با کیفیت جهانی",
+        "hero-btn1": "مشاهده محصولات",
+        "hero-btn2": "تماس با ما",
+        "about-badge": "درباره شرکت",
+        "about-title": "ما که هستیم؟",
+        "about-desc": "با سال‌ها تجربه در صنعت لیفتراک و تجهیزات جابجایی مواد، همراه مطمئن کسب‌وکار شما هستیم.",
+        "about-h3": "پیشگام در صنعت لیفتراک",
+        "about-p1": "شرکت پیشگام صنعت شمس آروند با تمرکز بر تأمین انواع لیفتراک‌های برقی، دیزلی و گازی، راه‌حل‌های کامل و حرفه‌ای برای انبارها، کارخانه‌ها و مراکز توزیع ارائه می‌دهد.",
+        "about-p2": "ما با بهره‌گیری از دانش فنی روز و شبکه گسترده تأمین، محصولاتی با استانداردهای بین‌المللی و خدمات پس از فروش قوی در اختیار مشتریان قرار می‌دهیم.",
+        "stat1": "سال تجربه",
+        "stat2": "مشتری راضی",
+        "stat3": "پشتیبانی",
+        "about-card-title": "خدمات ما",
+        "service1": "فروش لیفتراک نو و کارکرده",
+        "service2": "خدمات تعمیر و نگهداری",
+        "service3": "تأمین قطعات یدکی اصلی",
+        "service4": "مشاوره تخصصی انتخاب لیفتراک",
+        "service5": "آموزش اپراتور",
+        "service6": "قراردادهای سرویس دوره‌ای",
+        "products-badge": "محصولات",
+        "products-title": "انواع لیفتراک",
+        "products-desc": "طیف گسترده‌ای از لیفتراک‌های صنعتی متناسب با نیاز کسب‌وکار شما",
+        "prod1-title": "لیفتراک برقی",
+        "prod1-desc": "ایده‌آل برای فضاهای بسته و انبارها. بدون آلودگی صوتی و هوا، با هزینه‌های عملیاتی پایین.",
+        "prod2-title": "لیفتراک دیزلی",
+        "prod2-desc": "قدرت بالا برای کاربردهای سنگین فضای باز. مناسب کارخانه‌ها و محوطه‌های صنعتی.",
+        "prod3-title": "لیفتراک گازی (LPG)",
+        "prod3-desc": "انعطاف‌پذیر برای استفاده در فضای بسته و باز. عملکرد قوی با آلودگی کمتر نسبت به دیزل.",
+        "prod4-title": "لیفتراک انباری",
+        "prod4-desc": "استاکر، ریچ‌تراک و پالت‌تراک برای مدیریت بهینه فضای انبار و قفسه‌بندی بلند.",
+        "prod1-more": "اطلاعات بیشتر ←",
+        "prod2-more": "اطلاعات بیشتر ←",
+        "prod3-more": "اطلاعات بیشتر ←",
+        "prod4-more": "اطلاعات بیشتر ←",
+        "features-badge": "چرا ما؟",
+        "features-title": "مزایای همکاری با ما",
+        "features-desc": "ما فقط فروشنده نیستیم؛ شریک تجاری بلندمدت شما هستیم.",
+        "feat1-title": "کیفیت تضمین‌شده",
+        "feat1-desc": "محصولات با استانداردهای بین‌المللی و گارانتی معتبر",
+        "feat2-title": "خدمات پس از فروش",
+        "feat2-desc": "تیم فنی متخصص و قطعات یدکی در دسترس",
+        "feat3-title": "قیمت رقابتی",
+        "feat3-desc": "بهترین نسبت کیفیت به قیمت در بازار",
+        "feat4-title": "تحویل سریع",
+        "feat4-desc": "موجودی آماده و فرآیند سفارش آسان",
+        "contact-badge": "تماس با ما",
+        "contact-title": "آماده همکاری هستیم",
+        "contact-desc": "برای مشاوره رایگان و دریافت پیش‌فاکتور با ما در ارتباط باشید.",
+        "contact-info-title": "راه‌های ارتباطی",
+        "contact-phone": "تلفن همراه",
+        "contact-company": "شرکت",
+        "contact-company-name": "پیشگام صنعت شمس آروند",
+        "contact-hours": "ساعات کاری",
+        "contact-hours-val": "شنبه تا پنج‌شنبه: ۹ صبح تا ۶ عصر",
+        "contact-whatsapp": "واتساپ",
+        "qr-title": "اسکن کنید و وارد سایت شوید",
+        "qr-desc": "کد QR زیر را اسکن کنید تا مستقیماً به وب‌سایت ما هدایت شوید.",
+        "qr-hint": "پس از راه‌اندازی دامنه، این QR به‌روز می‌شود",
+        "footer-name": "پیشگام صنعت شمس آروند",
+        "footer-copy": "© ۱۴۰۵ پیشگام صنعت شمس آروند. تمامی حقوق محفوظ است."
+      },
+      en: {
+        "company-short": "Pishgam Sanat",
+        "nav-home": "Home",
+        "nav-about": "About",
+        "nav-products": "Products",
+        "nav-features": "Why Us",
+        "nav-contact": "Contact",
+        "hero-title": "Pishgam Sanat <span>Shams Arvand</span>",
+        "hero-tagline": "Specialist in supply, sales and service of forklifts and industrial equipment with global quality",
+        "hero-btn1": "View Products",
+        "hero-btn2": "Contact Us",
+        "about-badge": "About Company",
+        "about-title": "Who We Are",
+        "about-desc": "With years of experience in the forklift and material handling industry, we are your reliable business partner.",
+        "about-h3": "Pioneer in the Forklift Industry",
+        "about-p1": "Pishgam Sanat Shams Arvand focuses on supplying electric, diesel and LPG forklifts, providing complete and professional solutions for warehouses, factories and distribution centers.",
+        "about-p2": "Leveraging up-to-date technical knowledge and a wide supply network, we offer products with international standards and strong after-sales service.",
+        "stat1": "Years Experience",
+        "stat2": "Happy Clients",
+        "stat3": "Support",
+        "about-card-title": "Our Services",
+        "service1": "New & Used Forklift Sales",
+        "service2": "Repair & Maintenance Services",
+        "service3": "Genuine Spare Parts Supply",
+        "service4": "Expert Forklift Selection Consulting",
+        "service5": "Operator Training",
+        "service6": "Periodic Service Contracts",
+        "products-badge": "Products",
+        "products-title": "Forklift Types",
+        "products-desc": "A wide range of industrial forklifts tailored to your business needs",
+        "prod1-title": "Electric Forklifts",
+        "prod1-desc": "Ideal for indoor spaces and warehouses. Zero emissions, quiet operation, low running costs.",
+        "prod2-title": "Diesel Forklifts",
+        "prod2-desc": "High power for heavy outdoor applications. Perfect for factories and industrial yards.",
+        "prod3-title": "LPG Forklifts",
+        "prod3-desc": "Flexible for both indoor and outdoor use. Strong performance with lower emissions than diesel.",
+        "prod4-title": "Warehouse Equipment",
+        "prod4-desc": "Stackers, reach trucks and pallet trucks for optimal warehouse space and high racking.",
+        "prod1-more": "Learn more →",
+        "prod2-more": "Learn more →",
+        "prod3-more": "Learn more →",
+        "prod4-more": "Learn more →",
+        "features-badge": "Why Us",
+        "features-title": "Benefits of Working With Us",
+        "features-desc": "We are not just a seller; we are your long-term business partner.",
+        "feat1-title": "Guaranteed Quality",
+        "feat1-desc": "Products with international standards and valid warranty",
+        "feat2-title": "After-Sales Service",
+        "feat2-desc": "Expert technical team and available spare parts",
+        "feat3-title": "Competitive Pricing",
+        "feat3-desc": "Best quality-to-price ratio in the market",
+        "feat4-title": "Fast Delivery",
+        "feat4-desc": "Ready stock and easy ordering process",
+        "contact-badge": "Contact Us",
+        "contact-title": "Ready to Collaborate",
+        "contact-desc": "Contact us for free consultation and quotation.",
+        "contact-info-title": "Contact Information",
+        "contact-phone": "Mobile Phone",
+        "contact-company": "Company",
+        "contact-company-name": "Pishgam Sanat Shams Arvand",
+        "contact-hours": "Working Hours",
+        "contact-hours-val": "Sat–Thu: 9 AM – 6 PM",
+        "contact-whatsapp": "WhatsApp",
+        "qr-title": "Scan to Visit Website",
+        "qr-desc": "Scan the QR code below to go directly to our website.",
+        "qr-hint": "QR will be updated after domain setup",
+        "footer-name": "Pishgam Sanat Shams Arvand",
+        "footer-copy": "© 2026 Pishgam Sanat Shams Arvand. All rights reserved."
+      },
+      zh: {
+        "company-short": "先锋工业",
+        "nav-home": "首页",
+        "nav-about": "关于我们",
+        "nav-products": "产品",
+        "nav-features": "优势",
+        "nav-contact": "联系",
+        "hero-title": "先锋工业 <span>沙姆斯阿万德</span>",
+        "hero-tagline": "叉车及工业设备供应、销售与服务专家，全球品质",
+        "hero-btn1": "查看产品",
+        "hero-btn2": "联系我们",
+        "about-badge": "关于公司",
+        "about-title": "我们是谁",
+        "about-desc": "凭借多年叉车及物料搬运行业经验，我们是您可靠的业务伙伴。",
+        "about-h3": "叉车行业先锋",
+        "about-p1": "先锋工业沙姆斯阿万德专注于供应电动、柴油和液化石油气叉车，为仓库、工厂和配送中心提供完整专业解决方案。",
+        "about-p2": "依托先进技术知识和广泛供应网络，我们提供符合国际标准的产品和完善的售后服务。",
+        "stat1": "年经验",
+        "stat2": "满意客户",
+        "stat3": "支持服务",
+        "about-card-title": "我们的服务",
+        "service1": "新车与二手叉车销售",
+        "service2": "维修与保养服务",
+        "service3": "原厂配件供应",
+        "service4": "专业叉车选型咨询",
+        "service5": "操作员培训",
+        "service6": "定期服务合同",
+        "products-badge": "产品",
+        "products-title": "叉车类型",
+        "products-desc": "根据您的业务需求提供广泛的工业叉车系列",
+        "prod1-title": "电动叉车",
+        "prod1-desc": "适合室内空间和仓库。零排放、低噪音、运营成本低。",
+        "prod2-title": "柴油叉车",
+        "prod2-desc": "高功率适用于重型户外作业。适合工厂和工业场地。",
+        "prod3-title": "液化气叉车",
+        "prod3-desc": "室内外灵活使用。性能强劲，排放低于柴油。",
+        "prod4-title": "仓储设备",
+        "prod4-desc": "堆高车、前移式叉车和托盘车，优化仓库空间与高层货架。",
+        "prod1-more": "了解更多 →",
+        "prod2-more": "了解更多 →",
+        "prod3-more": "了解更多 →",
+        "prod4-more": "了解更多 →",
+        "features-badge": "为什么选择我们",
+        "features-title": "与我们合作的优势",
+        "features-desc": "我们不仅是销售商，更是您的长期业务伙伴。",
+        "feat1-title": "质量保证",
+        "feat1-desc": "符合国际标准的产品与有效保修",
+        "feat2-title": "售后服务",
+        "feat2-desc": "专业技师团队与现货配件",
+        "feat3-title": "价格竞争力",
+        "feat3-desc": "市场上最佳性价比",
+        "feat4-title": "快速交付",
+        "feat4-desc": "现货库存与便捷订购流程",
+        "contact-badge": "联系我们",
+        "contact-title": "准备好合作",
+        "contact-desc": "联系我们获取免费咨询和报价。",
+        "contact-info-title": "联系方式",
+        "contact-phone": "手机",
+        "contact-company": "公司",
+        "contact-company-name": "先锋工业沙姆斯阿万德",
+        "contact-hours": "工作时间",
+        "contact-hours-val": "周六至周四：上午9点至下午6点",
+        "contact-whatsapp": "WhatsApp",
+        "qr-title": "扫描访问网站",
+        "qr-desc": "扫描下方二维码直接访问我们的网站。",
+        "qr-hint": "域名设置后将更新二维码",
+        "footer-name": "先锋工业沙姆斯阿万德",
+        "footer-copy": "© 2026 先锋工业沙姆斯阿万德。版权所有。"
+      }
+    };
+
+    // ========== LANGUAGE FUNCTION ==========
+    function setLanguage(lang) {
+      const t = translations[lang];
+      if (!t) return;
+
+      // Update all elements that have an id matching a translation key
+      Object.keys(t).forEach(key => {
+        const el = document.getElementById(key);
+        if (el) {
+          if (key === 'hero-title') {
+            el.innerHTML = t[key];
+          } else {
+            el.textContent = t[key];
+          }
+        }
+      });
+
+      // Update elements with data-key (nav links etc.)
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (t[key]) {
+          el.textContent = t[key];
+        }
+      });
+
+      // Direction & font
+      const html = document.documentElement;
+      const body = document.body;
+
+      if (lang === 'fa') {
+        html.setAttribute('lang', 'fa');
+        html.setAttribute('dir', 'rtl');
+        body.classList.remove('ltr', 'zh');
+      } else if (lang === 'zh') {
+        html.setAttribute('lang', 'zh');
+        html.setAttribute('dir', 'ltr');
+        body.classList.add('ltr', 'zh');
+      } else {
+        html.setAttribute('lang', 'en');
+        html.setAttribute('dir', 'ltr');
+        body.classList.add('ltr');
+        body.classList.remove('zh');
+      }
+
+      // Active language button
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      const activeBtn = document.getElementById('btn-' + lang);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      // Save preference
+      localStorage.setItem('pishgam-lang', lang);
+    }
+
+    // ========== MOBILE MENU ==========
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobileMenu').classList.remove('active');
+    }
+
+    // ========== INIT ==========
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('pishgam-lang') || 'fa';
+      setLanguage(savedLang);
+
+      // Navbar scroll effect
+      window.addEventListener('scroll', function() {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+      });
+    });
+  </script>
+</body>
+</html>
